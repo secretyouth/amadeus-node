@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>amadeus 1.0.0-beta1 | Documentation</title>
+  <title>amadeus 1.0.0-beta2 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -14,7 +14,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>amadeus</h3>
-          <div class='mb1'><code>1.0.0-beta1</code></div>
+          <div class='mb1'><code>1.0.0-beta2</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -158,6 +158,34 @@
               
                 
                 <li><a
+                  href='#location'
+                  class=" toggle-sibling">
+                  Location
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#locationget'
+                        class='regular pre-open'>
+                        #get
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#locations'
                   class=" toggle-sibling">
                   Locations
@@ -255,9 +283,9 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#shoppinghotels'
+                        href='#shoppinghotel'
                         class='regular pre-open'>
-                        #hotels
+                        #hotel
                       </a></li>
                       
                     </ul>
@@ -382,9 +410,9 @@
               
                 
                 <li><a
-                  href='#hotels'
+                  href='#hotel'
                   class=" toggle-sibling">
-                  Hotels
+                  Hotel
                   <span class='icon'>▸</span>
                 </a>
                 
@@ -395,9 +423,9 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#hotelsoffers'
+                        href='#hoteloffer'
                         class='regular pre-open'>
-                        #offers
+                        #offer
                       </a></li>
                       
                     </ul>
@@ -438,9 +466,9 @@
               
                 
                 <li><a
-                  href='#offers'
+                  href='#offer'
                   class=" toggle-sibling">
-                  Offers
+                  Offer
                   <span class='icon'>▸</span>
                 </a>
                 
@@ -451,7 +479,7 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#offersget'
+                        href='#offerget'
                         class='regular pre-open'>
                         #get
                       </a></li>
@@ -1989,6 +2017,165 @@ request
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='location'>
+      Location
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A namespaced client for the
+<code>/v2/reference-data/locations/:location_id</code> endpoints</p>
+<p>Access via the <a href="#amadeus">Amadeus</a> object</p>
+<pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
+amadeus.referenceData.locations(<span class="hljs-string">'ALHR'</span>);</pre>
+
+
+  <div class='pre p1 fill-light mt0'>new Location(client: <a href="#client">Client</a>, locationId: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>client</span> <code class='quiet'>(<a href="#client">Client</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>locationId</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>locationId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='locationget'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>get(params)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns details for a specific airport</p>
+
+
+  <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
+        a Promise
+<p>Find details for location with ID 'ALHR'</p>
+<pre class='hljs'>amadeus.referenceData.location(<span class="hljs-string">'ALHR'</span>).get();</pre>
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='locations'>
       Locations
     </h3>
@@ -2620,11 +2807,11 @@ amadeus.shopping;</pre>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='shoppinghotels'>
+    <div class='border-bottom' id='shoppinghotel'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>hotels(hotelId)</span>
+            <span class='code strong strong truncate'>hotel(hotelId?)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2635,7 +2822,7 @@ amadeus.shopping;</pre>
   <p>Loads a namespaced path for a specific hotel with a specific hotel ID</p>
 
 
-  <div class='pre p1 fill-light mt0'>hotels(hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="#hotels">Hotels</a></div>
+  <div class='pre p1 fill-light mt0'>hotel(hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?): <a href="#hotel">Hotel</a></div>
   
   
 
@@ -2652,8 +2839,7 @@ amadeus.shopping;</pre>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>hotelId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>nil</code>)</code>
+            <span class='code bold'>hotelId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</code>
 	    The ID of the hotel to search for
 
           </div>
@@ -2668,7 +2854,7 @@ amadeus.shopping;</pre>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#hotels">Hotels</a></code>:
+      <code><a href="#hotel">Hotel</a></code>:
         
 
       
@@ -3437,8 +3623,8 @@ codes to request. Example: RTPAR001
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='hotels'>
-      Hotels
+    <h3 class='fl m0' id='hotel'>
+      Hotel
     </h3>
     
     
@@ -3449,10 +3635,10 @@ codes to request. Example: RTPAR001
 <code>/v1/shopping/hotels/:hotel_id</code> endpoints</p>
 <p>Access via the <a href="#amadeus">Amadeus</a> object</p>
 <pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
-amadeus.shopping.hotels(<span class="hljs-number">123</span>);</pre>
+amadeus.shopping.hotel(<span class="hljs-number">123</span>);</pre>
 
 
-  <div class='pre p1 fill-light mt0'>new Hotels(client: <a href="#client">Client</a>, hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  <div class='pre p1 fill-light mt0'>new Hotel(client: <a href="#client">Client</a>, hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
   
   
 
@@ -3500,11 +3686,11 @@ amadeus.shopping.hotels(<span class="hljs-number">123</span>);</pre>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='hotelsoffers'>
+    <div class='border-bottom' id='hoteloffer'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>offers(offerId)</span>
+            <span class='code strong strong truncate'>offer(offerId?)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -3512,11 +3698,11 @@ amadeus.shopping.hotels(<span class="hljs-number">123</span>);</pre>
 
   
 
-  <p>Loads a namespaced path for a specific hotel offers with a specific hotel
+  <p>Loads a namespaced path for a specific hotel offer with a specific hotel
 ID and offer ID.</p>
 
 
-  <div class='pre p1 fill-light mt0'>offers(offerId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="#offers">Offers</a></div>
+  <div class='pre p1 fill-light mt0'>offer(offerId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?): <a href="#offer">Offer</a></div>
   
   
 
@@ -3533,8 +3719,7 @@ ID and offer ID.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>offerId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>nil</code>)</code>
+            <span class='code bold'>offerId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</code>
 	    The ID of the hotel to search for
 
           </div>
@@ -3549,7 +3734,7 @@ ID and offer ID.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#offers">Offers</a></code>:
+      <code><a href="#offer">Offer</a></code>:
         
 
       
@@ -3597,7 +3782,7 @@ ID and offer ID.</p>
 <code>/v1/shopping/hotels/:hotel_id/hotel-offers</code> endpoints</p>
 <p>Access via the <a href="#amadeus">Amadeus</a> object</p>
 <pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
-amadeus.shopping.hotels(<span class="hljs-number">123</span>).hotelOffers;</pre>
+amadeus.shopping.hotel(<span class="hljs-number">123</span>).hotelOffers;</pre>
 
 
   <div class='pre p1 fill-light mt0'>new HotelHotelOffers(client: <a href="#client">Client</a>, hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
@@ -3698,7 +3883,7 @@ amadeus.shopping.hotels(<span class="hljs-number">123</span>).hotelOffers;</pre>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
 <p>Search for hotel offers for hotel with ID 123</p>
-<pre class='hljs'>amadeus.hotels(123).hotelOffers.get();</pre>
+<pre class='hljs'>amadeus.hotel(123).hotelOffers.get();</pre>
 
       
     
@@ -3733,8 +3918,8 @@ amadeus.shopping.hotels(<span class="hljs-number">123</span>).hotelOffers;</pre>
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='offers'>
-      Offers
+    <h3 class='fl m0' id='offer'>
+      Offer
     </h3>
     
     
@@ -3745,10 +3930,10 @@ amadeus.shopping.hotels(<span class="hljs-number">123</span>).hotelOffers;</pre>
 <code>/v1/shopping/hotel:hotel_id/offers/:offer_id</code> endpoints</p>
 <p>Access via the <a href="#amadeus">Amadeus</a> object</p>
 <pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
-amadeus.shopping.hotels(<span class="hljs-number">123</span>).offers(<span class="hljs-number">234</span>);</pre>
+amadeus.shopping.hotel(<span class="hljs-number">123</span>).offer(<span class="hljs-number">234</span>);</pre>
 
 
-  <div class='pre p1 fill-light mt0'>new Offers(client: <a href="#client">Client</a>, hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, offerId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  <div class='pre p1 fill-light mt0'>new Offer(client: <a href="#client">Client</a>, hotelId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, offerId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
   
   
 
@@ -3804,7 +3989,7 @@ amadeus.shopping.hotels(<span class="hljs-number">123</span>).offers(<span class
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='offersget'>
+    <div class='border-bottom' id='offerget'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
