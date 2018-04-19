@@ -494,9 +494,19 @@
               
                 
                 <li><a
-                  href='#airtraffics'
+                  href='#airtraffic'
+                  class="">
+                  AirTraffic
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#traveled'
                   class=" toggle-sibling">
-                  AirTraffics
+                  Traveled
                   <span class='icon'>▸</span>
                 </a>
                 
@@ -507,7 +517,7 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#airtrafficsget'
+                        href='#traveledget'
                         class='regular pre-open'>
                         #get
                       </a></li>
@@ -4075,8 +4085,8 @@ amadeus.shopping.hotel(<span class="hljs-number">123</span>).offer(<span class="
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='airtraffics'>
-      AirTraffics
+    <h3 class='fl m0' id='airtraffic'>
+      AirTraffic
     </h3>
     
     
@@ -4084,13 +4094,77 @@ amadeus.shopping.hotel(<span class="hljs-number">123</span>).offer(<span class="
   
 
   <p>A namespaced client for the
-<code>/v1/travel/analytics/air-traffics</code> endpoints</p>
+<code>/v1/travel/analytics/air-traffic</code> endpoints</p>
 <p>Access via the <a href="#amadeus">Amadeus</a> object</p>
 <pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
-amadeus.travel.analytics.airTraffics;</pre>
+amadeus.travel.analytics.airTraffic;</pre>
 
 
-  <div class='pre p1 fill-light mt0'>new AirTraffics(client: <a href="#client">Client</a>)</div>
+  <div class='pre p1 fill-light mt0'>new AirTraffic(client: <a href="#client">Client</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>client</span> <code class='quiet'>(<a href="#client">Client</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='traveled'>
+      Traveled
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A namespaced client for the
+<code>/v1/travel/analytics/air-traffic/traveled</code> endpoints</p>
+<p>Access via the <a href="#amadeus">Amadeus</a> object</p>
+<pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
+amadeus.travel.analytics.AirTraffic.Traveled;</pre>
+
+
+  <div class='pre p1 fill-light mt0'>new Traveled(client: <a href="#client">Client</a>)</div>
   
   
 
@@ -4130,7 +4204,7 @@ amadeus.travel.analytics.airTraffics;</pre>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='airtrafficsget'>
+    <div class='border-bottom' id='traveledget'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -4216,7 +4290,7 @@ YYYY-MM format
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
 <p>Find the air traffic from LHR in January 2011</p>
-<pre class='hljs'>amadeus.travel.analytics.airTraffics.get({
+<pre class='hljs'>amadeus.travel.analytics.AirTraffic.Traveled.get({
   <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
   <span class="hljs-attr">period</span>: <span class="hljs-string">'2011-01'</span>
 });</pre>
