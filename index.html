@@ -3014,9 +3014,9 @@ language of your choice</p>
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find a the checkin links for Branson AirExpress</p>
+<p>Find a the checkin links for Air France</p>
 <pre class='hljs'>amadeus.referenceData.urls.checkinLinks.get({
-  <span class="hljs-attr">airline</span>: <span class="hljs-string">'1X'</span>
+  <span class="hljs-attr">airline</span>: <span class="hljs-string">'AF'</span>
 });</pre>
 
       
@@ -3359,10 +3359,10 @@ traveler is going. PAR, for example
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the cheapest flight from London Heathrow to Paris</p>
+<p>Find the cheapest flight dates from New-York to Madrid</p>
 <pre class='hljs'>amadeus.shopping.flightDates.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
-  <span class="hljs-attr">destination</span>: <span class="hljs-string">'PAR'</span>
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">'NYC'</span>,
+  <span class="hljs-attr">destination</span>: <span class="hljs-string">'MAD'</span>
 });</pre>
 
       
@@ -3528,9 +3528,9 @@ will depart. BOS, for example.
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the cheapest destination from London to Paris for Xmas</p>
+<p>Find the cheapest destination from Madrid</p>
 <pre class='hljs'>amadeus.shopping.flightDestinations.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">'MAD'</span>
 });</pre>
 
       
@@ -3715,11 +3715,11 @@ traveler is going. PAR, for example
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the cheapest destination from London Heathrow</p>
+<p>Find the cheapest flights from New-York to Madrid for Summer 2019</p>
 <pre class='hljs'>amadeus.shopping.flightOffers.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
-  <span class="hljs-attr">destination</span>: <span class="hljs-string">'LAX'</span>,
-  <span class="hljs-attr">departureDate</span>: <span class="hljs-string">'2017-12-24'</span>
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">'NYC'</span>,
+  <span class="hljs-attr">destination</span>: <span class="hljs-string">'MAD'</span>,
+  <span class="hljs-attr">departureDate</span>: <span class="hljs-string">'2019-08-01'</span>
 });</pre>
 
       
@@ -3822,7 +3822,7 @@ amadeus.shopping.hotelOffers;</pre>
 
   
 
-  <p>Find the cheapest flight dates from an origin to a destination.</p>
+  <p>Find the list of hotels for a dedicated city.</p>
 
 
   <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
@@ -3914,9 +3914,9 @@ codes to request. Example: RTPAR001
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Search for hotels in London</p>
+<p>Search for hotels in Paris</p>
 <pre class='hljs'>amadeus.shopping.hotelOffers.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>
+  <span class="hljs-attr">cityCode</span>: <span class="hljs-string">'PAR'</span>
 })</pre>
 
       
@@ -4534,7 +4534,7 @@ amadeus.travel.analytics.AirTraffic.Booked;</pre>
 
   
 
-  <p>Returns a list of air traffic reports.</p>
+  <p>Returns a list of air traffic reports based on the number of bookings.</p>
 
 
   <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
@@ -4607,10 +4607,10 @@ YYYY-MM format
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic from LHR in January 2011</p>
+<p>Find the air traffic from London in May 2016</p>
 <pre class='hljs'>amadeus.travel.analytics.AirTraffic.Booked.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2011-01'</span>
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LON'</span>,
+  <span class="hljs-attr">period</span>: <span class="hljs-string">'2016-05'</span>
 });</pre>
 
       
@@ -4786,10 +4786,11 @@ YYYY-MM format
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic from LHR in January 2011</p>
+<p>Find the air traffic for travelers arriving in Paris in 2017</p>
 <pre class='hljs'>amadeus.travel.analytics.AirTraffic.BusiestPeriod.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2011-01'</span>
+  <span class="hljs-attr">cityCode</span>: <span class="hljs-string">'PAR'</span>,
+  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017'</span>,
+  <span class="hljs-attr">direction</span>: Amadeus.direction.arriving
 });</pre>
 
       
@@ -4892,7 +4893,7 @@ amadeus.travel.analytics.AirTraffic.Traveled;</pre>
 
   
 
-  <p>Returns a list of air traffic reports.</p>
+  <p>Returns a list of air traffic reports based on the number of people traveling.</p>
 
 
   <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
@@ -4965,10 +4966,10 @@ YYYY-MM format
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic from LHR in January 2011</p>
+<p>Find the air traffic from Nice in August 2017</p>
 <pre class='hljs'>amadeus.travel.analytics.AirTraffic.Traveled.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2011-01'</span>
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">'NCE'</span>,
+  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017-08'</span>
 });</pre>
 
       
@@ -5160,10 +5161,11 @@ dates are not supported.
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic from LHR in January 2011</p>
+<p>Find the air traffic from Nice in August 2017 for the French market</p>
 <pre class='hljs'>amadeus.travel.analytics.fareSearches.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LHR'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2011-01'</span>
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">'NCE'</span>,
+  <span class="hljs-attr">sourceCountry</span> : <span class="hljs-string">'FR'</span>,
+  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017-08'</span>
 });</pre>
 
       
