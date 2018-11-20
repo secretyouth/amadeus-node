@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>amadeus 1.1.0 | Documentation</title>
+  <title>amadeus 2.0.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -14,7 +14,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>amadeus</h3>
-          <div class='mb1'><code>1.1.0</code></div>
+          <div class='mb1'><code>2.0.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -594,9 +594,9 @@
               
                 
                 <li><a
-                  href='#traveled'
+                  href='#searchedbydestination'
                   class=" toggle-sibling">
-                  Traveled
+                  SearchedByDestination
                   <span class='icon'>▸</span>
                 </a>
                 
@@ -607,7 +607,7 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#traveledget'
+                        href='#searchedbydestinationget'
                         class='regular pre-open'>
                         #get
                       </a></li>
@@ -622,9 +622,9 @@
               
                 
                 <li><a
-                  href='#faresearches'
+                  href='#searched'
                   class=" toggle-sibling">
-                  FareSearches
+                  Searched
                   <span class='icon'>▸</span>
                 </a>
                 
@@ -635,7 +635,35 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#faresearchesget'
+                        href='#searchedget'
+                        class='regular pre-open'>
+                        #get
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#traveled'
+                  class=" toggle-sibling">
+                  Traveled
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#traveledget'
                         class='regular pre-open'>
                         #get
                       </a></li>
@@ -2276,18 +2304,9 @@ amadeus.referenceData.airlines;</pre>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.IATACode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.airlineCodes</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
-  <td class='break-word'><span>Code of the airline following IATA standard.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>params.ICAOCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-  </td>
-  <td class='break-word'><span>Code of the airline following ICAO standard.
+  <td class='break-word'><span>Code of the airline following IATA or ICAO standard.
 </span></td>
 </tr>
 
@@ -2310,7 +2329,7 @@ amadeus.referenceData.airlines;</pre>
         a Promise
 <p>Find to which airlines belongs IATA Code BA</p>
 <pre class='hljs'>amadeus.referenceData.airlines.get({
-  <span class="hljs-attr">IATACode</span> : <span class="hljs-string">'BA'</span>
+  <span class="hljs-attr">airlineCodes</span> : <span class="hljs-string">'BA'</span>
 });</pre>
 
       
@@ -2980,7 +2999,7 @@ language of your choice</p>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.airline</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.airlineCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
   <td class='break-word'><span>airline ID - required
 </span></td>
@@ -3016,7 +3035,7 @@ language of your choice</p>
         a Promise
 <p>Find a the checkin links for Air France</p>
 <pre class='hljs'>amadeus.referenceData.urls.checkinLinks.get({
-  <span class="hljs-attr">airline</span>: <span class="hljs-string">'AF'</span>
+  <span class="hljs-attr">airlineCode</span>: <span class="hljs-string">'AF'</span>
 });</pre>
 
       
@@ -4573,17 +4592,17 @@ amadeus.travel.analytics.AirTraffic.Booked;</pre>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.origin</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.originCityCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
-  <td class='break-word'><span>IATA code of the origin city - e.g. BOS for
-Boston - required
+  <td class='break-word'><span>IATA code of the origin city - e.g. MAD for
+Madrid - required
 </span></td>
 </tr>
 
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.query</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.period</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
   <td class='break-word'><span>period when consumers are travelling in
 YYYY-MM format
@@ -4607,10 +4626,10 @@ YYYY-MM format
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic from London in May 2016</p>
+<p>Where were people flying to from Madrid in the August 2017?</p>
 <pre class='hljs'>amadeus.travel.analytics.AirTraffic.Booked.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'LON'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2016-05'</span>
+  <span class="hljs-attr">originCityCode</span>: <span class="hljs-string">'MAD'</span>,
+  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017-08'</span>
 });</pre>
 
       
@@ -4752,19 +4771,29 @@ amadeus.travel.analytics.AirTraffic.BusiestPeriod;</pre>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.origin</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.cityCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
-  <td class='break-word'><span>IATA code of the origin city - e.g. BOS for
-Boston - required
+  <td class='break-word'><span>IATA code of the origin city - e.g. MAD for
+Madrid - required
 </span></td>
 </tr>
 
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.query</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.period</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
   <td class='break-word'><span>period when consumers are travelling in
+YYYY-MM format
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.direction</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>to select between arrivals and departures (default: arrivals)
 YYYY-MM format
 </span></td>
 </tr>
@@ -4786,11 +4815,406 @@ YYYY-MM format
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic for travelers arriving in Paris in 2017</p>
+<p>What were the busiest months for Madrid in 2017?</p>
 <pre class='hljs'>amadeus.travel.analytics.AirTraffic.BusiestPeriod.get({
-  <span class="hljs-attr">cityCode</span>: <span class="hljs-string">'PAR'</span>,
+  <span class="hljs-attr">cityCode</span>: <span class="hljs-string">'MAD'</span>,
   <span class="hljs-attr">period</span>: <span class="hljs-string">'2017'</span>,
   <span class="hljs-attr">direction</span>: Amadeus.direction.arriving
+});</pre>
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='searchedbydestination'>
+      SearchedByDestination
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A namespaced client for the
+<code>/v1/travel/analytics/air-traffic/searched/by-destination</code> endpoints</p>
+<p>Access via the <a href="#amadeus">Amadeus</a> object</p>
+<pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
+amadeus.travel.analytics.AirTraffic.SearchedByDestination;</pre>
+
+
+  <div class='pre p1 fill-light mt0'>new SearchedByDestination(client: <a href="#client">Client</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>client</span> <code class='quiet'>(<a href="#client">Client</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='searchedbydestinationget'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>get(params)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a list of air traffic reports based on the number of people searching.</p>
+
+
+  <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.originCityCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>IATA code of the origin city - e.g. MAD for
+Madrid - required
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.destinationCityCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>IATA code of the destination city - e.g. NYC for
+New-York - required
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.searchPeriod</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>period when consumers are travelling in
+YYYY-MM format
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.marketCountryCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>IATA code of the country from which searches were made
+e.g. 
+<code>"ES"</code>
+ for Spain
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
+        a Promise
+<p>How many people in Spain searched for a trip from Madrid to New-York in September 2017?</p>
+<pre class='hljs'>amadeus.travel.analytics.AirTraffic.SearchedByDestination.get({
+  <span class="hljs-attr">originCityCode</span>: <span class="hljs-string">'MAD'</span>,
+  <span class="hljs-attr">destinationCityCode</span>: <span class="hljs-string">'NYC'</span>,
+  <span class="hljs-attr">searchPeriod</span>: <span class="hljs-string">'2017-08'</span>,
+  <span class="hljs-attr">marketCountryCode</span>: <span class="hljs-string">'ES'</span>
+});</pre>
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='searched'>
+      Searched
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A namespaced client for the
+<code>/v1/travel/analytics/air-traffic/searched</code> endpoints</p>
+<p>Access via the <a href="#amadeus">Amadeus</a> object</p>
+<pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
+amadeus.travel.analytics.AirTraffic.Searched;</pre>
+
+
+  <div class='pre p1 fill-light mt0'>new Searched(client: <a href="#client">Client</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>client</span> <code class='quiet'>(<a href="#client">Client</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='searchedget'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>get(params)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a list of air traffic reports based on the number of people searching.</p>
+
+
+  <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.originCityCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>IATA code of the origin city - e.g. MAD for
+Madrid - required
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.searchPeriod</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>period when consumers are travelling in
+YYYY-MM format
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.marketCountryCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>IATA code of the country from which searches were made
+e.g. 
+<code>"ES"</code>
+ for Spain
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
+        a Promise
+<p>Which were the most searched flight destinations from Madrid in August 2017?</p>
+<pre class='hljs'>amadeus.travel.analytics.AirTraffic.Searched.get({
+  <span class="hljs-attr">originCityCode</span>: <span class="hljs-string">'MAD'</span>,
+  <span class="hljs-attr">searchPeriod</span>: <span class="hljs-string">'2017-08'</span>,
+  <span class="hljs-attr">marketCountryCode</span>: <span class="hljs-string">'ES'</span>
 });</pre>
 
       
@@ -4932,17 +5356,17 @@ amadeus.travel.analytics.AirTraffic.Traveled;</pre>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.origin</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.originCityCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
-  <td class='break-word'><span>IATA code of the origin city - e.g. BOS for
-Boston - required
+  <td class='break-word'><span>IATA code of the origin city - e.g. MAD for
+Madrid - required
 </span></td>
 </tr>
 
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>params.query</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  <td class='break-word'><span class='code bold'>params.period</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
   </td>
   <td class='break-word'><span>period when consumers are travelling in
 YYYY-MM format
@@ -4966,206 +5390,10 @@ YYYY-MM format
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
         a Promise
-<p>Find the air traffic from Nice in August 2017</p>
+<p>Where were people flying to from Madrid in the January 2017?</p>
 <pre class='hljs'>amadeus.travel.analytics.AirTraffic.Traveled.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'NCE'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017-08'</span>
-});</pre>
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='faresearches'>
-      FareSearches
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>A namespaced client for the
-<code>/v1/travel/analytics/fare-searches</code> endpoints</p>
-<p>Access via the <a href="#amadeus">Amadeus</a> object</p>
-<pre class='hljs'><span class="hljs-keyword">let</span> amadeus = <span class="hljs-keyword">new</span> Amadeus();
-amadeus.travel.analytics.fareSearches;</pre>
-
-
-  <div class='pre p1 fill-light mt0'>new FareSearches(client: <a href="#client">Client</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>client</span> <code class='quiet'>(<a href="#client">Client</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='faresearchesget'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>get(params)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>The Fare Search History API allows to find the number of
-estimated searches from an origin, optionally a destination,
-within a time period when travelers are performing the searches.</p>
-
-
-  <div class='pre p1 fill-light mt0'>get(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-            = <code>{}</code>)</code>
-	    
-          </div>
-          
-          <table class='mt1 mb2 fixed-table h5 col-12'>
-            <colgroup>
-              <col width='30%' />
-              <col width='70%' />
-            </colgroup>
-            <thead>
-              <tr class='bold fill-light'>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody class='mt1'>
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>params.origin</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-  </td>
-  <td class='break-word'><span>IATA code of the origin city e.g. BOS for
-Boston - required
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>params.sourceCountry</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-  </td>
-  <td class='break-word'><span>IATA code of the country from which
-fare searches were made - e.g. US for United States
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>params.period</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-  </td>
-  <td class='break-word'><span>period of search; can be a year
-or a month or a week. ISO format must be used - e.g. 2015
-for year; 2015-05 for month and 2015-W04 for week. Period
-ranges are not supported. Only periods from year 2011-01 up
-to current year and previous month or week are valid. Future
-dates are not supported.
-</span></td>
-</tr>
-
-
-              
-            </tbody>
-          </table>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>, <a href="#responseerror">ResponseError</a>></code>:
-        a Promise
-<p>Find the air traffic from Nice in August 2017 for the French market</p>
-<pre class='hljs'>amadeus.travel.analytics.fareSearches.get({
-  <span class="hljs-attr">origin</span>: <span class="hljs-string">'NCE'</span>,
-  <span class="hljs-attr">sourceCountry</span> : <span class="hljs-string">'FR'</span>,
-  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017-08'</span>
+  <span class="hljs-attr">originCityCode</span>: <span class="hljs-string">'MAD'</span>,
+  <span class="hljs-attr">period</span>: <span class="hljs-string">'2017-01'</span>
 });</pre>
 
       
