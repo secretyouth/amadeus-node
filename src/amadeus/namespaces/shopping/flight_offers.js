@@ -43,6 +43,24 @@ class FlightOffers {
   get(params = {}) {
     return this.client.get('/v1/shopping/flight-offers', params);
   }
+
+  /**
+   * Find the cheapest bookable flights for a date.
+   *
+   * @param {Object} params
+   * @param {string} params.origin City/Airport IATA code from which the flight
+   *   will depart. BOS, for example.
+   * @param {string} params.destination City/Airport IATA code to which the
+   *   traveler is going. PAR, for example
+   * @param {string} params.departureDate The departure date for the flight
+   * @return {Promise.<Response,ResponseError>} a Promise
+   *
+   * Find the cheapest flights from New-York to Madrid for Summer 2019
+   *`
+   */
+  post(params = {}) {
+    return this.client.post('/v2/shopping/flight-offers', params);
+  }
 }
 
 export default FlightOffers;
